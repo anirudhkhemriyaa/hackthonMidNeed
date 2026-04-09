@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-import Title from "../ui-components/title/title";
+import Title from "../ui-components/title/Title";
 import BlogBox from "./BlogBox";
 
 // Images
