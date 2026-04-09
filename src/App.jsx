@@ -15,7 +15,6 @@ export default function App() {
   const [userIsScrolled, setUserIsScrolled] = useState(false);
   const [mobileNavbarOpen, setMobileNavbarOpen] = useState(false);
 
-  // Scroll handler
   useEffect(() => {
     const handleScroll = () => {
       setUserIsScrolled(window.pageYOffset > 80);
@@ -25,7 +24,7 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Single source of truth (cleaner)
+  /
   const toggleMobileMenu = () => {
     setMobileNavbarOpen(prev => !prev);
   };
@@ -37,26 +36,25 @@ export default function App() {
   return (
     <div className="App">
 
-      {/* Mobile Nav */}
+     
       <MobileNav
         isOpen={mobileNavbarOpen}
         closeMobileMenu={closeMobileMenu}
       />
 
-      {/* Backdrop */}
+   
       <Backdrop
         isOpen={mobileNavbarOpen}
         closeMobileMenu={closeMobileMenu}
       />
 
-      {/* Desktop Nav */}
       <DesktopNav
         userIsScrolled={userIsScrolled}
         mobileMenuOpen={toggleMobileMenu}
-        mobileNavbarOpen={mobileNavbarOpen}  // ✅ important
+        mobileNavbarOpen={mobileNavbarOpen} 
       />
 
-      {/* Sections */}
+     
       <Hero />
       <Portfolio />
       <Partners />
