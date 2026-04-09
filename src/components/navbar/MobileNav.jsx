@@ -29,7 +29,7 @@ export default function MobileNav({ isOpen, closeMobileMenu }) {
             <a
               href={`#${item}`}
               onClick={closeMobileMenu}
-              className="hover:text-white-400  text-white transition"
+              className="hover:text-grey-400  text-white transition"
             >
               {item.toUpperCase()}
             </a>

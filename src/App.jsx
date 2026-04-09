@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-
 // Components
 import DesktopNav from "./components/navbar/DesktopNav";
 import MobileNav from "./components/navbar/MobileNav";
@@ -9,7 +8,6 @@ import Hero from "./components/hero/Hero";
 import Portfolio from "./components/portfolio/Portfolio";
 import Partners from "./components/partners/Partners";
 import About from "./components/about/About";
-import Blog from "./components/blog/Blog";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 
@@ -17,7 +15,7 @@ export default function App() {
   const [userIsScrolled, setUserIsScrolled] = useState(false);
   const [mobileNavbarOpen, setMobileNavbarOpen] = useState(false);
 
-  // Handle scroll
+  // Scroll handler
   useEffect(() => {
     const handleScroll = () => {
       setUserIsScrolled(window.pageYOffset > 80);
@@ -27,13 +25,18 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handlers
-  const closeMobileMenu = () => setMobileNavbarOpen(false);
-  const mobileMenuOpen = () => setMobileNavbarOpen(true);
+  // ✅ Single source of truth (cleaner)
+  const toggleMobileMenu = () => {
+    setMobileNavbarOpen(prev => !prev);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileNavbarOpen(false);
+  };
 
   return (
     <div className="App">
-      
+
       {/* Mobile Nav */}
       <MobileNav
         isOpen={mobileNavbarOpen}
@@ -49,7 +52,8 @@ export default function App() {
       {/* Desktop Nav */}
       <DesktopNav
         userIsScrolled={userIsScrolled}
-        mobileMenuOpen={mobileMenuOpen}
+        mobileMenuOpen={toggleMobileMenu}
+        mobileNavbarOpen={mobileNavbarOpen}  // ✅ important
       />
 
       {/* Sections */}
@@ -57,7 +61,6 @@ export default function App() {
       <Portfolio />
       <Partners />
       <About />
-   
       <Contact />
       <Footer />
 
