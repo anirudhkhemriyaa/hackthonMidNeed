@@ -18,16 +18,18 @@ export default function MobileNav({ isOpen, closeMobileMenu }) {
       </button>
 
       {/* LOGO */}
-      <img src={Logo} alt="logo" className="mb-10" />
+      <h1 className="text-3xl  text-white font-bold cursor-pointer mb-10">
+  ᗰEᗪIᑎEEᗪ
+</h1>
 
       {/* MENU */}
-      <ul className="space-y-6 text-xl">
+      <ul className="space-y-6 text-white text-xl">
         {["download", "about", "contact"].map((item) => (
           <li key={item}>
             <a
               href={`#${item}`}
               onClick={closeMobileMenu}
-              className="hover:text-indigo-400 transition"
+              className="hover:text-white-400  text-white transition"
             >
               {item.toUpperCase()}
             </a>
