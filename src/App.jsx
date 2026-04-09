@@ -24,7 +24,7 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /
+  
   const toggleMobileMenu = () => {
     setMobileNavbarOpen(prev => !prev);
   };
