@@ -1,4 +1,4 @@
-import HeroImage from "../../assets/hero/hero-image.png";
+import p6 from "../../assets/portfolio/p6.jpeg";
 
 export default function Hero() {
   return (
@@ -18,7 +18,7 @@ export default function Hero() {
           </p>
 
           <button
-          onClick={() => window.location.href = "https://google.com"}
+          onClick={() => window.location.href = "https://github.com/meashutoshhoon/MediNeed/releases/download/v1.0.0/MediNeed-1.0.0-generic-release.apk"}
           className="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 
                              rounded-xl font-semibold hover:scale-105 transition">
             Download for Free
@@ -28,7 +28,7 @@ export default function Hero() {
         {/* RIGHT */}
         <div className="flex justify-center">
           <img
-            src={HeroImage}
+            src={p6}
             alt="hero"
             className="max-w-md w-full"
           />

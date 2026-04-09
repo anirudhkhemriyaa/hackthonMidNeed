@@ -1,21 +1,26 @@
 import { useState } from "react";
 
 // Assets
-import Preview1 from "../../assets/portfolio/project01/preview.png";
-import Preview2 from "../../assets/portfolio/project02/preview.png";
-import Preview3 from "../../assets/portfolio/project03/preview.png";
-import Preview4 from "../../assets/portfolio/project04/preview.png";
-import Preview5 from "../../assets/portfolio/project05/preview.png";
-import Preview6 from "../../assets/portfolio/project06/preview.png";
+import p1 from "../../assets/portfolio/p1.jpeg";
+import p2 from "../../assets/portfolio/p2.jpeg";
+import p3 from "../../assets/portfolio/p3.jpeg";
+import p4 from "../../assets/portfolio/p4.jpeg";
+import p5 from "../../assets/portfolio/p5.jpeg";
+import p6 from "../../assets/portfolio/p6.jpeg";
+
+
+
 
 export default function Portfolio() {
   const [filter, setFilter] = useState("all");
 
   const projects = [
-    { id: 1, img: Preview1, tag: "branding", title: "Stock Management" },
-    { id: 2, img: Preview2, tag: "web", title: "Expiry Alerts" },
-    { id: 3, img: Preview3, tag: "illustrations", title: " Report " },
-   
+    { id: 1, img: p1, tag: "branding", title: "Stock Management" },
+    { id: 2, img: p2, tag: "web", title: "Expiry Alerts" },
+    { id: 3, img: p3, tag: "illustrations", title: " Report " },
+    { id: 3, img: p4, tag: "illustrations", title: " Report " },
+    { id: 3, img: p5, tag: "illustrations", title: " Report " },
+    { id: 3, img: p6, tag: "illustrations", title: " Report " },
   ];
 
   const filtered =
